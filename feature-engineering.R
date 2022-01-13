@@ -6,12 +6,6 @@ library(car)
 library(rpart.plot)
 library(rattle)
 
-# Casey Neubauer Resubmission for Assignment 3 and Assignment 4
-
-################
-# Assignment 03 -----------------------------------------------------------
-################
-
 # Pull in VS10 dataset as a dataframe
 VS10 <- read.csv("VS10.csv")
 vs10 <- as.data.frame(VS10) %>% select(-CSA2010)
@@ -139,11 +133,6 @@ stat.desc(index_data)
 # Find correlations
 round(cor(index_data),2)
 
-
-################
-# Assignment 04 --------------------------------------------------------------
-################
-
 # Prepare feature index to add to vs10 data
 add_index <- select(index_data, ID, index)
 
@@ -231,10 +220,6 @@ rptab
 
 # Overall error rate
 sum(diag(rptab)) / sum(rptab)
-
-##############
-# Question 4 #
-##############
 
 # Pull in 2015 dataset
 VS15 <- read.csv("VS15.csv")
@@ -353,20 +338,12 @@ data2 <- data2 %>% rowwise() %>%
 index_data2 <- select(data2, ID, owner_occ, vacant, hs_absent,
                      low_inc, med_inc, employed, index2, vio_crime)
 
-
-
-##############################################
-
-# 10/23
 # Find descriptive statistics
 stat.desc(index_data)
 
 # Find correlations
 round(cor(index_data),2)
 
-################
-# Assignment 04 --------------------------------------------------------------
-################
 
 add_index <- select(index_data, ID, index)
 
